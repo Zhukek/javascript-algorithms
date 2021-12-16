@@ -9,7 +9,15 @@
 */
 
 function fibonacci(n) {
-    // Напишите код здесь
+    const fibonacciVar = [0];
+    for (i = 1; i < n; i++) {
+        if (fibonacciVar.length === 1) {
+            fibonacciVar.push(1);
+        } else {
+            fibonacciVar.push(fibonacciVar[fibonacciVar.length - 2] + fibonacciVar[fibonacciVar.length - 1]);
+        }
+    }
+    return fibonacciVar[fibonacciVar.length - 1];
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

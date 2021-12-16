@@ -8,7 +8,13 @@
 */
 
 function uniq(arr) {
-    // Напишите код здесь
+    const uniqMassive = [];
+    arr.forEach(function(item) {
+        if (uniqMassive.some(elem => elem === item) === false) {
+            uniqMassive.push(item);
+        }
+    })
+    return uniqMassive
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:

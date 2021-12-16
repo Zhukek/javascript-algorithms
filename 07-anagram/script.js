@@ -9,10 +9,22 @@
 */
 
 function anagram(str1, str2) {
-    // Напишите код здесь
+    const strMassive1 = str1.toLowerCase().split('');
+    const strMassive2 = str2.toLowerCase().split('');
+    const booleMassive = []
+        if (strMassive1.length === strMassive2.length && str1.toLowerCase() !== str2.toLowerCase()) {
+        strMassive1.forEach(function (letter) {
+           booleMassive.push(strMassive2.includes(letter));
+        })
+        return booleMassive.every(function(boole) {
+            return boole === true;
+        })   
+    } else {
+        return false;
+    }
 }
 
 // Протестируйте решение, вызывая функцию с разными аргументами:
 
-console.log(anagram('finder', 'Friend')); // true
+console.log(anagram('up', 'UP')); // false
 console.log(anagram('hello', 'bye')); // false
